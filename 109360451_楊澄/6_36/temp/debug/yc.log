@@ -1,0 +1,4 @@
+﻿D:\Visual Studio seventeen\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate 目錄結尾不是結尾斜線。這個建置執行個體將會加入此斜線，因為這樣才能正確評估 Intermediate 目錄。
+D:\Visual Studio seventeen\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output 目錄結尾不是結尾斜線。這個建置執行個體將會加入此斜線，因為這樣才能正確評估 Output 目錄。
+  Main.cpp
+  yc.vcxproj -> D:\School\NTUT\大三上\Programming_LAB\HW_5\code\109360451_楊澄\6_36\yc\yc\..\..\temp\debug\yc.exe
