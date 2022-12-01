@@ -1,54 +1,68 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
+#include <string.h>
 
-int binarySearch(int arr[], int l, int r, int x)
-{
-    if (r >= l) {
-        int mid = l + (r - l) / 2;
-
-        // If the element is present at the middle
-        // itself
-        if (arr[mid] == x)
-            return mid;
-
-        // If element is smaller than mid, then
-        // it can only be present in left subarray
-        if (arr[mid] > x)
-            return binarySearch(arr, l, mid - 1, x);
-
-        // Else the element can only be present
-        // in right subarray
-        return binarySearch(arr, mid + 1, r, x);
-    }
-
-    // We reach here when element is not
-    // present in array
-    return -1;
-}
+int linearsearch(const int array[], int key, int size);
 
 int main(void)
 {
-    int i, x, n;
-    printf("陣列個數:");
-    scanf("%d", &n);
-    ////////////////////////////////////	
-    printf("\n");
-    int arr[100];
+    int a[100] = { 0 };
+    int a1[100] = { 0 };
+    printf("請輸入元素個數(1-100之間):");
+    int elements;
+    scanf("%d", &elements);
     printf("陣列元素:");
-    for (i = 0; i < n; i++) 
+    for (int i = 0; i < elements; i++)
     {
-        scanf("%d", &arr[i]);
+        scanf("%d", &a[i]);
     }
-    printf("\n");
-    ////////////////////////////////////	
-    printf("尋找:");
-    scanf("%d", &x);
-    printf("\n");
 
-    ////////////////////////////////////
-    int result = binarySearch(arr, 0, n - 1, x);
-    (result == -1)
-        ? printf("未找到")
-        : printf("元素在陣列索引:%d", result);
+    printf("\n原本的陣列:\n");
+    for (int i = 0; i < elements; i++)
+    {
+        printf("%d ", a[i]);
+    }
+
+    //("\n排序後的陣列:\n");
+    for (int i = 0; i < elements; i++)
+    {
+        a1[i] = a[i];
+    }
+    int tmp;
+    for (int i = 0; i < elements - 1; i++)
+    {
+        for (int j = 0; j < elements - 1; j++)
+        {
+            if (a1[j] < a1[j + 1])
+            {
+                tmp = a1[j];
+                a1[j] = a1[j + 1];
+                a1[j + 1] = tmp;
+            }
+        }
+    }
+
+    printf("\n排序後的陣列:\n");
+    for (int i = 0; i < elements; i++)
+    {
+        printf("%d ", a1[i]);
+    }
+
+    printf("\nThs max value in the array is %d", a1[0]);
+
+    system("pause");
     return 0;
+}
+
+int linearsearch(const int array[], int key, int size)
+{
+    int n;
+    for (n = 0; n < size; n++)
+    {
+        if (array[n] == key)
+        {
+            return n;
+        }
+    }
+    return -1;
 }
